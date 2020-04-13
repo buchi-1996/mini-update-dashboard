@@ -1,13 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Livvic:400,500,900|Roboto+Slab&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body{
+    font-family: 'Livvic', sans-serif;
+    background: url(../img/map-color-overlay.png)center/cover no-repeat;
+}
+
 .header{
     padding: 15px 0px 15px 25px;
-    background: url(../img/svgs.svg), #eee;
-    box-shadow: 0 0.4em 1em #eefffe;
+    background: url(../img/svgs.svg), #fefefe;
+    box-shadow: 0 0 1em #eefffe;
     position: sticky;
     top: 0;
     z-index: 99;
@@ -15,9 +21,9 @@
 }
 
 .header .logo p{
-    font-family: 'Times New Roman', Times, serif;
     font-size: 24px;
-    color: #aaa;
+    font-weight: 600;
+    color: #777;
     text-shadow: rgb(63, 60, 60);
 }
 
@@ -60,9 +66,9 @@
 }
 
 .loader{
-    position: absolute;
+    position: relative;
     top: 50%;
-    right: 49%;
+    left: 46%;
     display: none;
 }
 
@@ -119,6 +125,7 @@ input[type="submit"]{
     height: 200px;
     width: 200px;
     border-radius: 50%;
+    background: #eee;
     border: 3px solid #fff;
     margin: 0 auto ;
     position: relative;
@@ -130,6 +137,14 @@ input[type="submit"]{
     height: 194px;
     width: 200px;
     border-radius: 50%;
+}
+
+.profile-pic p{
+    font-size: 120px;
+    color: #666;
+    text-align: center;
+    line-height: 1.5;
+    text-transform: uppercase;
 }
 
 .photo-icon{

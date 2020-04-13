@@ -50,6 +50,7 @@ let userEmail = document.querySelector('.user-name p');
 let userName = document.querySelector('.user-name h4');
 let userText = document.querySelector('.user-bio p');
 const loader = document.querySelector('.loader');
+const defaultPic = document.querySelector('.profile-pic p');
 
 
 
@@ -61,30 +62,36 @@ const text = document.getElementById('text');
 
 
 
+
 submitButton.addEventListener('click', function (e) {
-  loader.style.display = 'block'
+    loader.style.display = 'block'
     setTimeout(validateProfile, 3000);
     e.preventDefault();
 })
 
 
-function validateProfile(){
+function validateProfile() {
     if (firstName.value && secondName.value && email.value && text.value) {
+
+        let newabrr1 = firstName.value[0];
+        
+        console.log(newabrr1);
+        defaultPic.appendChild(document.createTextNode(newabrr1));
         userEmail.textContent = email.value;
         userName.textContent = `${firstName.value.toUpperCase()} ${secondName.value.toUpperCase()}`;
         userText.textContent = text.value;
         regCard.classList.add('move');
         setTimeout(moveUp, 1000);
         loader.style.display = 'none';
-        
-    }else{
+
+    } else {
         alert('missing input');
         loader.style.display = 'none';
 
     }
-    function moveUp(){
+    function moveUp() {
         userProfile.classList.add('up');
-        }
+    }
 }
 
 
