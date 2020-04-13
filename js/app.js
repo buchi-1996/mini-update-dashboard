@@ -74,7 +74,7 @@ function validateProfile() {
     if (firstName.value && secondName.value && email.value && text.value) {
 
         let newabrr1 = firstName.value[0];
-        
+
         console.log(newabrr1);
         defaultPic.appendChild(document.createTextNode(newabrr1));
         userEmail.textContent = email.value;
@@ -85,7 +85,7 @@ function validateProfile() {
         loader.style.display = 'none';
 
     } else {
-        alert('missing input');
+        alert('must complete all field');
         loader.style.display = 'none';
 
     }
