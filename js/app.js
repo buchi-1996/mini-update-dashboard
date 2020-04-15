@@ -60,6 +60,20 @@ const secondName = document.getElementById('lastName');
 const email = document.getElementById('email');
 const text = document.getElementById('text');
 
+class formValidations{
+    static errorMsg(message){
+        message.style.background = 'rgba(255, 0, 0, 0.288)';
+        setTimeout(remove, 3000);
+        message.focus();
+
+        function remove(){
+            message.style.background = '';
+        }
+    }
+
+   
+}
+
 
 
 
@@ -84,9 +98,28 @@ function validateProfile() {
         setTimeout(moveUp, 1000);
         loader.style.display = 'none';
 
-    } else {
-        alert('must complete all field');
+    } else if(firstName.value === ''){
+        formValidations.errorMsg(firstName);
         loader.style.display = 'none';
+    }
+    else if(secondName.value === ''){
+        // alert('enter last name');
+        formValidations.errorMsg(secondName);
+        loader.style.display = 'none';
+    }
+    else if(email.value === ''){
+        // alert('enter email');
+        formValidations.errorMsg(email);
+        loader.style.display = 'none';
+    }
+    else if(text.value === ''){
+        // alert('say something');
+        formValidations.errorMsg(text);
+        loader.style.display = 'none';
+    }
+    
+    else {
+        return false;
 
     }
     function moveUp() {
